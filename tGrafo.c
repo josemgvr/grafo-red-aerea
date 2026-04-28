@@ -35,7 +35,7 @@ void insertarArista(tGrafo *g, tVertice v1, tVertice v2, tPeso peso) {
     }
 
     if (aux != NULL) {
-        insertarArista_lady(aux->ady, v2, peso);
+        insertarArista_lady(&aux->ady, v2, peso);
     }  else {
         printf("No se ha podido insertar el destino, debido a que no se ha registrado la ciudad de origen \n");
     }
@@ -88,3 +88,36 @@ void MostrarGrafo(tGrafo g) {
         aux = aux->sig;
     }
 }
+
+void RecorridoEnAnchura(tGrafo *g) { //Aun falta implementarlo
+
+
+}
+
+//Funciones utilizadas en el main
+
+void consultar_destinos(tGrafo g, tVertice v) {
+    struct NodoLista *aux = g;
+
+    while (aux != NULL && !igualVertice(aux->ciudad, v)) {
+        aux = aux->sig;
+    }
+
+    if (aux != NULL) {
+        mostrarLista(aux->ady);
+    } else {
+        printf("No se ha encontrado la ciudad \n");
+    }
+}
+
+void consultar_trayecto_mas_barato(tGrafo g) {
+    struct NodoLista *aux = g;
+
+    while (aux != NULL) {
+
+    }
+
+}
+void consultar_trayecto_mas_caro(tGrafo g);
+void consultar_trayecto_mas_corto(tGrafo g);
+void consultar_trayecto_mas_largo(tGrafo g);

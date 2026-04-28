@@ -45,7 +45,7 @@ void insertarArista_lady(tListaAdy *l,tVertice v ,tPeso peso) {
 
 
 void obtenerPrimeroLista(tListaAdy l, tVertice* v, tPeso *peso) {
-    if (EsListaVacia(l)) {
+    if (!EsListaVacia(l)) {
         asignarVertice(v,l->ciudad);
         asignarPeso(peso,l->info);
     }
@@ -152,6 +152,7 @@ void asignarLista (tListaAdy original, tListaAdy *copia) {
 void destruirLista(tListaAdy *l) {
     struct NodoAdy *aux = *l;
     while (aux != NULL) {
+        struct NodoAdy *aux = *l;
         eliminarElementoLista(l, aux->ciudad, aux->info);
     }
 }
@@ -159,13 +160,17 @@ void destruirLista(tListaAdy *l) {
 void mostrarLista(tListaAdy l) {
     struct NodoAdy *aux = l;
     int i = 0;
+    printf("Ciudades que se pueden visitar: \n");
 
     while (aux != NULL) {
-        printf("Ciudades que se pueden visitar: \n");
-        printf("-%dº:", i);
+        printf("%d- \n", i+1);
         mostraVertice(aux->ciudad);
         mostraPeso(aux->info);
         i++;
+        aux = aux->sig;
     }
 }
+
+
+//Funciones utilizadas en el main
 

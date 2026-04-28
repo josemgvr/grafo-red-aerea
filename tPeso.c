@@ -28,12 +28,12 @@ void crearPeso(char compañia[MAX_COM], int tiempo, int precio, tPeso* e) {
 
 }
 int igualPeso(tPeso uno, tPeso dos) {
-    return uno.precio == dos.precio && uno.tiempo == dos.tiempo && strcmp(uno.compañia, dos.compañia);
+    return uno.precio == dos.precio && uno.tiempo == dos.tiempo && strcmp(uno.compañia, dos.compañia) == 0;
 }
 void mostraPeso(tPeso t) {
     printf("Precio: %d \n", t.precio);
     printf("Tiempo: %d \n", t.tiempo);
-    printf("Compañia: ");
+    printf("Compabia: ");
     puts(t.compañia);
     printf("\n");
 }

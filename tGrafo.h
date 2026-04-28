@@ -7,7 +7,7 @@
 #include "tVertice.h"
 #include "tListaAdyacencia.h"
 
-typedef struct NodoLista {
+struct NodoLista {
     tVertice ciudad;
     struct NodoLista *sig;
     struct NodoAdy *ady;
@@ -22,6 +22,16 @@ void insertarArista(tGrafo *g, tVertice v1, tVertice v2, tPeso peso);
 void insertarVertice (tGrafo *g, tVertice v); //InsertarCiudad
 void EliminarVertice (tGrafo *g, tVertice v); //EliminarCiudad
 void MostrarGrafo(tGrafo g);
+void RecorridoEnAnchura(tGrafo *g); //Aun falta implementarlo
+
+//Funciones utilizadas en el main
+
+void consultar_destinos(tGrafo g, tVertice v);
+
+void consultar_trayecto_mas_barato(tGrafo g);
+void consultar_trayecto_mas_caro(tGrafo g);
+void consultar_trayecto_mas_corto(tGrafo g);
+void consultar_trayecto_mas_largo(tGrafo g);
 
 
 #endif //PRACTICA_TGRAFO_H

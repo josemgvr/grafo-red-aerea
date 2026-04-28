@@ -17,7 +17,7 @@ Descripción:
 
 #include "tPeso.h"
 #include "tVertice.h"
-typedef  struct NodoAdy {
+struct NodoAdy {
     tVertice ciudad;
     tPeso info;
     struct NodoAdy *sig;
@@ -27,7 +27,7 @@ typedef struct NodoAdy* tListaAdy;
 
 void CrearListaVacia(tListaAdy *l);
 int EsListaVacia(tListaAdy l);
-void insertarArista_lady(tListaAdy *l,tVertice ,tPeso peso);
+void insertarArista_lady(tListaAdy *l,tVertice v,tPeso peso);
 
 void obtenerPrimeroLista(tListaAdy l, tVertice* v, tPeso *peso);;
 void obtenerultimoLista(tListaAdy l, tVertice* v, tPeso *peso);
