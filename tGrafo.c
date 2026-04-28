@@ -77,6 +77,14 @@ void EliminarVertice (tGrafo *g, tVertice v) {
 }
 
 void MostrarGrafo(tGrafo g) {
-    printf("Los siguientes vuelos  \n");
+    struct NodoLista *aux = g;
+    printf("Siguientes vuelos: \n");
 
+    while (aux != NULL) {
+        printf("-");
+        mostraVertice(aux->ciudad);
+        printf("Destinos: \n");
+        mostrarLista(aux->ady);
+        aux = aux->sig;
+    }
 }
