@@ -10,4 +10,6 @@ add_executable(Practica main.c
         tListaAdyacencia.h
         tPeso.c
         tPeso.h
-        tPeso.h)
+        tPeso.h
+        tVertice.c
+        tVertice.h)

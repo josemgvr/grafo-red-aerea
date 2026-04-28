@@ -13,10 +13,10 @@ typedef struct {
     int precio;
 } tPeso;
 
-void asignarElemento(tPeso* e1, tPeso e2);
-void crearElemento(char compañia[MAX_COM], int tiempo, int precio, tPeso* e); //TElemento crearElemento(int num);
-int igualElemento(tPeso uno, tPeso dos);
-void mostrarElemento(tPeso t);
+void asignarPeso(tPeso* e1, tPeso e2);
+void crearPeso(char compañia[MAX_COM], int tiempo, int precio, tPeso* e); //TElemento crearElemento(int num);
+int igualPeso(tPeso uno, tPeso dos);
+void mostraPeso(tPeso t);
 
 
 #endif //PRACTICA_TPESO_H

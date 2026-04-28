@@ -77,6 +77,13 @@ build CMakeFiles/Practica.dir/tPeso.c.obj: C_COMPILER__Practica_unscanned_Debug 
   OBJECT_DIR = CMakeFiles\Practica.dir
   OBJECT_FILE_DIR = CMakeFiles\Practica.dir
 
+build CMakeFiles/Practica.dir/tVertice.c.obj: C_COMPILER__Practica_unscanned_Debug C$:/Users/jmvil/OneDrive$ -$ Universidad$ Rey$ Juan$ Carlos/Documentos/Github/grafo-red-aerea/tVertice.c || cmake_object_order_depends_target_Practica
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\Practica.dir\tVertice.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Practica.dir
+  OBJECT_FILE_DIR = CMakeFiles\Practica.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Practica
@@ -85,7 +92,7 @@ build CMakeFiles/Practica.dir/tPeso.c.obj: C_COMPILER__Practica_unscanned_Debug 
 #############################################
 # Link the executable Practica.exe
 
-build Practica.exe: C_EXECUTABLE_LINKER__Practica_Debug CMakeFiles/Practica.dir/main.c.obj CMakeFiles/Practica.dir/tGrafo.c.obj CMakeFiles/Practica.dir/tListaAdyacencia.c.obj CMakeFiles/Practica.dir/tPeso.c.obj
+build Practica.exe: C_EXECUTABLE_LINKER__Practica_Debug CMakeFiles/Practica.dir/main.c.obj CMakeFiles/Practica.dir/tGrafo.c.obj CMakeFiles/Practica.dir/tListaAdyacencia.c.obj CMakeFiles/Practica.dir/tPeso.c.obj CMakeFiles/Practica.dir/tVertice.c.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
