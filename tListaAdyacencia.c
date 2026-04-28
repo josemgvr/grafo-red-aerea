@@ -1,6 +1,17 @@
-//
-// Created by jmvil on 27/04/2026.
-//
+/********************************************************************************
+Módulo:         tListaAdyacencia
+Fichero:        ( ) Programa  ( ) Espec. TAD  (x) Impl. TAD
+Autor:          Jose Miguel Villora
+Fecha:          27/04/2026
+Descripción:
+    Este fichero implementa el TAD tListaAdyacencia, que representa la lista
+    dinámica de adyacencia asociada a cada ciudad del grafo de la red aérea.
+    Cada nodo de la lista almacena un vértice de destino (tVertice) y el peso
+    de la arista correspondiente (tPeso). En este módulo se desarrollan las
+    operaciones de inserción al principio, eliminación, pertenencia, longitud,
+    obtención de extremos, asignación, comparación, destrucción y visualización
+    de la lista, gestionando la memoria dinámica mediante malloc y free.
+*********************************************************************************/
 
 #include <stdlib.h>
 #include "tListaAdyacencia.h"
@@ -130,7 +141,7 @@ void asignarLista (tListaAdy original, tListaAdy *copia) {
         aux = aux->sig;
     }
     aux = aux_lady;
-    
+
     while (aux != NULL) {
         insertarArista_lady(copia, aux->ciudad, aux->info);
         aux = aux->sig;

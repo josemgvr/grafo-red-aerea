@@ -1,6 +1,16 @@
-//
-// Created by jmvil on 27/04/2026.
-//
+/********************************************************************************
+Módulo:         tPeso
+Fichero:        ( ) Programa  (x) Espec. TAD  ( ) Impl. TAD
+Autor:          Jose Miguel Villora
+Fecha:          27/04/2026
+Descripción:
+    Este fichero define la especificación del TAD tPeso, que representa el peso
+    de una arista en el grafo de la red aérea. Un peso encapsula la información
+    asociada a un vuelo concreto entre dos ciudades: la compañía aérea que opera
+    el trayecto, la duración del vuelo en minutos y el precio del billete en euros.
+    Se proporcionan las operaciones básicas de creación, asignación, comparación
+    y visualización del TAD.
+*********************************************************************************/
 
 #ifndef PRACTICA_TPESO_H
 #define PRACTICA_TPESO_H

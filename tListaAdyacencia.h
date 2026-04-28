@@ -1,6 +1,16 @@
-//
-// Created by jmvil on 27/04/2026.
-//
+/********************************************************************************
+Módulo:         tListaAdyacencia
+Fichero:        ( ) Programa  (x) Espec. TAD  ( ) Impl. TAD
+Autor:          Jose Miguel Villora
+Fecha:          27/04/2026
+Descripción:
+    Este fichero define la especificación del TAD tListaAdyacencia, que representa
+    la lista de adyacencia asociada a cada vértice del grafo de la red aérea. Cada
+    nodo de la lista almacena una ciudad de destino (tVertice) y la información del
+    vuelo que conecta con ella (tPeso). La lista es dinámica y enlazada. Se
+    proporcionan las operaciones de creación, inserción, eliminación, consulta,
+    recorrido y destrucción de la lista.
+*********************************************************************************/
 
 #ifndef PRACTICA_TLISTAADYACENCIA_H
 #define PRACTICA_TLISTAADYACENCIA_H

@@ -1,6 +1,15 @@
-//
-// Created by jmvil on 27/04/2026.
-//
+/********************************************************************************
+Módulo:         tPeso
+Fichero:        ( ) Programa  ( ) Espec. TAD  (x) Impl. TAD
+Autor:          Jose Miguel Villora
+Fecha:          27/04/2026
+Descripción:
+    Este fichero implementa el TAD tPeso, que representa el peso asociado a cada
+    arista del grafo de la red aérea. Cada peso almacena la compañía aérea, el
+    tiempo de vuelo en minutos y el precio del billete en euros. En este módulo
+    se desarrollan las operaciones de creación, asignación, comparación e
+    impresión por pantalla de un tPeso.
+*********************************************************************************/
 
 #include <stdio.h>
 #include "tPeso.h"

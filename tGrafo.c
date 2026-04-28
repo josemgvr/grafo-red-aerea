@@ -5,4 +5,7 @@
 
 void insertarArista(tGrafo *g, tVertice v1, tVertice v2, tPeso peso) {
 
+
+
+
 }

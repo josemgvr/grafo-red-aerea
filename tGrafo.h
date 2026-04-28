@@ -15,6 +15,8 @@ typedef struct NodoLista {
 
 typedef struct NodoLista *tGrafo;
 
+void CrearGrafoVacio(tGrafo *g);
+void 
 void insertarArista(tGrafo *g, tVertice v1, tVertice v2, tPeso peso);
 
 #endif //PRACTICA_TGRAFO_H
