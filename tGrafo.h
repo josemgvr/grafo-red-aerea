@@ -9,14 +9,19 @@
 
 typedef struct NodoLista {
     tVertice ciudad;
-    struct Nodo *sig;
+    struct NodoLista *sig;
     struct NodoAdy *ady;
 };
 
 typedef struct NodoLista *tGrafo;
 
 void CrearGrafoVacio(tGrafo *g);
-void 
+int EsGrafoVacio(tGrafo g);
+int perteneceGrafo (tGrafo g, tVertice v);
 void insertarArista(tGrafo *g, tVertice v1, tVertice v2, tPeso peso);
+void insertarVertice (tGrafo *g, tVertice v); //InsertarCiudad
+void EliminarVertice (tGrafo *g, tVertice v); //EliminarCiudad
+void MostrarGrafo(tGrafo g);
+
 
 #endif //PRACTICA_TGRAFO_H
