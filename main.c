@@ -38,6 +38,7 @@ int main(void) {
             crearVertice(destino,&v2);
             crearPeso(compañia,tiempo,precio,&peso);
             insertarVertice(&g, v1);
+            insertarVertice(&g, v2);
             insertarArista(&g, v1, v2, peso);
         }
 
@@ -65,27 +66,37 @@ int main(void) {
                    consultar_destinos(g, v1);
                    break;
                case 2:
+                    printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
                    break;
                case 3:
+                   printf("Ingrese la ciudad que desea comprobar a que ciudades puedes vistar haciendo una escala \n");
+                   fflush(stdin);
+                   gets(ciudad);
+                   crearVertice(ciudad, &v1);
+                   consultar_destinos_1escala(g, v1);
                    break;
                case 4:
+                   printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
                    break;
                case 5:
+                   printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
                    break;
                case 6:
+                   printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
                    break;
                case 7:
+                   printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
                    break;
                case 8:
+                   printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
                    break;
                case 0:
                    printf("Hasta pronto! \n");
                    break;
                    default: printf("Error: no has seleccionado una operacion valida. Intentelo de nuevo \n");
            }
-
+           printf("Introduzca cualquier valor para continuar \n");
            scanf(" %d", &seleccion);
-
        } while (seleccion != 0);
 
 

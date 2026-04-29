@@ -162,6 +162,9 @@ void mostrarLista(tListaAdy l) {
     int i = 0;
     printf("Ciudades que se pueden visitar: \n");
 
+    if (aux == NULL) {
+        printf("No hay ciudades posibles a las que se pueda visitar desde esta ciudad \n");
+    }
     while (aux != NULL) {
         printf("%d- \n", i+1);
         mostraVertice(aux->ciudad);
@@ -174,3 +177,14 @@ void mostrarLista(tListaAdy l) {
 
 //Funciones utilizadas en el main
 
+void mostrarLista_1escala(tListaAdy l) {
+    struct NodoAdy *aux = l;
+
+
+    while (aux != NULL) {
+        mostraVertice(aux->ciudad);
+        aux = aux->sig;
+    }
+
+
+}

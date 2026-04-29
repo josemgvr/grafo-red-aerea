@@ -42,4 +42,7 @@ void asignarLista (tListaAdy original, tListaAdy *copia);
 void destruirLista(tListaAdy *l);
 void mostrarLista(tListaAdy l);
 
+//Funciones necesarias para resolver el main
+void mostrarLista_1escala(tListaAdy l);
+
 #endif //PRACTICA_TLISTAADYACENCIA_H

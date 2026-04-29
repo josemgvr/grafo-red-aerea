@@ -110,6 +110,23 @@ void consultar_destinos(tGrafo g, tVertice v) {
     }
 }
 
+
+void consultar_destinos_1escala(tGrafo g, tVertice v) {
+    struct NodoLista *aux = g;
+
+    while (aux != NULL && !igualVertice(aux->ciudad, v)) {
+        aux = aux->sig;
+    }
+
+    if (aux != NULL) {
+        printf("Posibles destinos haciendo una escala: \n");
+        mostrarLista_1escala(aux->ady);
+
+    } else {
+        printf("No hay posibles destinos haciendo una escala \n");
+    }
+}
+
 void consultar_trayecto_mas_barato(tGrafo g) {
     struct NodoLista *aux = g;
 
