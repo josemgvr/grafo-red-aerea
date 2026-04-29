@@ -93,6 +93,5 @@ void RecorridoEnAnchura(tGrafo *g) { //Aun falta implementarlo
 
 }
 
-//Funciones utilizadas en el main
 
 

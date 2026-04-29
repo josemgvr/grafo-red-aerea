@@ -25,6 +25,5 @@ int igualVertice(tVertice uno, tVertice dos) {
     return strcmp(uno,dos) == 0;
 }
 void mostraVertice (tVertice t) {
-    printf("Ciudad: ");
     puts(t);
 }

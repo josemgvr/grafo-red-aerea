@@ -17,6 +17,8 @@ Descripción:
 
 #include "tPeso.h"
 #include "tVertice.h"
+#include "tConjunto.h"
+
 struct NodoAdy {
     tVertice ciudad;
     tPeso info;
@@ -43,8 +45,7 @@ int igualLista (tListaAdy l1, tListaAdy l2);
 void asignarLista (tListaAdy original, tListaAdy *copia);
 void destruirLista(tListaAdy *l);
 void mostrarLista(tListaAdy l);
-
-//Funciones necesarias para resolver el main
+void guardar_vertices(tListaAdy l, tConjunto *c);
 
 
 

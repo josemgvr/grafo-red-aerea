@@ -5,6 +5,8 @@
 #include "UsosGrafo.h"
 #include "tGrafo.h"
 #include "tListaAdyacencia.h"
+#include "tConjunto.h"
+#include "tVertice.h"
 #include <stdio.h>
 
 //Funciones utilizadas en el main, rompemos el encapsulado
@@ -27,22 +29,35 @@ void consultar_destinos(tGrafo g, tVertice v) {
 
 void consultar_destinos_1escala(tGrafo g, tVertice v) {
     struct NodoLista *aux = g;
-    tVertice v2;
 
     while (aux != NULL && !igualVertice(aux->ciudad, v)) {
         aux = aux->sig;
     }
 
     if (aux != NULL) {
-        struct NodoAdy *aux_lady = aux->ady;
-        printf("Posibles destinos haciendo una escala: \n");
-        while (aux_lady != NULL) {
+        tVertice v2;
+        char nothing[MAX_CIU] = "nothing";
+        tVertice nothing_v;
+        tConjunto c_primer_destino, c_ultimo_destino;
+        CrearConjuntoVacio(&c_primer_destino);
+        CrearConjuntoVacio(&c_ultimo_destino);
+        crearVertice(nothing, &nothing_v);
+        guardar_vertices (aux->ady,&c_primer_destino);
 
-            asignarVertice(&v2,aux_lady->ciudad);
-            consultar_destinos(g,v2);
-            aux_lady = aux_lady->sig;
+        while (!igualVertice(nothing_v, v2)) {
+            obtenerPrimeroConjunto(&c_primer_destino,&v2);
+            aux = g;
+
+            while (aux != NULL && !igualVertice(aux->ciudad, v2)) {
+                aux = aux->sig;
+            }
+            if (aux != NULL) {
+                guardar_vertices (aux->ady, &c_ultimo_destino);
+            }
         }
 
+        printf("Posibles destinos haciendo una escala: \n");
+        mostrarConjunto(c_ultimo_destino);
     } else {
         printf("No hay posibles destinos haciendo una escala \n");
     }

@@ -18,6 +18,7 @@ Descripción:
 #include <stdio.h>
 #include "tVertice.h"
 #include "tGrafo.h"
+#include "tConjunto.h"
 
 void CrearListaVacia(tListaAdy *l) {
     *l = NULL;
@@ -181,10 +182,21 @@ void mostrarLista(tListaAdy l) {
     }
     while (aux != NULL) {
         printf("%d- \n", i+1);
+        printf("Ciudad: ");
         mostraVertice(aux->ciudad);
+        printf("\n");
         mostraPeso(aux->info);
         i++;
         aux = aux->sig;
     }
 }
 
+void guardar_vertices(tListaAdy l, tConjunto *c) {
+    struct NodoAdy *aux = l;
+    tVertice v;
+    while (aux != NULL) {
+        asignarVertice(&v, aux->ciudad);
+        poner(c, v);
+        aux = aux->sig;
+    }
+}
