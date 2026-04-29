@@ -33,7 +33,9 @@ void obtenerPrimeroLista(tListaAdy l, tVertice* v, tPeso *peso);;
 void obtenerultimoLista(tListaAdy l, tVertice* v, tPeso *peso);
 
 int longitudLista (tListaAdy l);
-int perteneceLista (tVertice v, tPeso peso, tListaAdy l);
+int perteneceLista (tVertice v,tPeso Peso, tListaAdy l);
+
+
 
 void eliminarElementoLista(tListaAdy *l,  tVertice v, tPeso peso);
 
@@ -43,6 +45,8 @@ void destruirLista(tListaAdy *l);
 void mostrarLista(tListaAdy l);
 
 //Funciones necesarias para resolver el main
-void mostrarLista_1escala(tListaAdy l);
+
+
+
 
 #endif //PRACTICA_TLISTAADYACENCIA_H

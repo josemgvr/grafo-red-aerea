@@ -33,7 +33,7 @@ int igualPeso(tPeso uno, tPeso dos) {
 void mostraPeso(tPeso t) {
     printf("Precio: %d \n", t.precio);
     printf("Tiempo: %d \n", t.tiempo);
-    printf("Compabia: ");
+    printf("Compania: ");
     puts(t.compañia);
     printf("\n");
 }

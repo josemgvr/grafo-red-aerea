@@ -91,50 +91,8 @@ void MostrarGrafo(tGrafo g) {
 
 void RecorridoEnAnchura(tGrafo *g) { //Aun falta implementarlo
 
-
 }
 
 //Funciones utilizadas en el main
 
-void consultar_destinos(tGrafo g, tVertice v) {
-    struct NodoLista *aux = g;
 
-    while (aux != NULL && !igualVertice(aux->ciudad, v)) {
-        aux = aux->sig;
-    }
-
-    if (aux != NULL) {
-        mostrarLista(aux->ady);
-    } else {
-        printf("No se ha encontrado la ciudad \n");
-    }
-}
-
-
-void consultar_destinos_1escala(tGrafo g, tVertice v) {
-    struct NodoLista *aux = g;
-
-    while (aux != NULL && !igualVertice(aux->ciudad, v)) {
-        aux = aux->sig;
-    }
-
-    if (aux != NULL) {
-        printf("Posibles destinos haciendo una escala: \n");
-        mostrarLista_1escala(aux->ady);
-
-    } else {
-        printf("No hay posibles destinos haciendo una escala \n");
-    }
-}
-
-void consultar_trayecto_mas_barato(tGrafo g) {
-    struct NodoLista *aux = g;
-
-    while (aux != NULL) {
-
-    }
-
-}
-void consultar_trayecto_mas_caro(tGrafo g);
-void consultar_trayecto_mas_corto(tGrafo g);
-void consultar_trayecto_mas_largo(tGrafo g);

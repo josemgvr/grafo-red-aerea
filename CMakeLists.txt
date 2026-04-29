@@ -8,6 +8,10 @@ add_executable(Practica
         tGrafo.c
         tListaAdyacencia.c
         tVertice.c
-        tPeso.c)
+        tPeso.c
+        UsosGrafo.c
+        UsosGrafo.h
+        tConjunto.c
+        tConjunto.h)
 
 configure_file(vuelos.txt vuelos.txt COPYONLY)

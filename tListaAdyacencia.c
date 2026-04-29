@@ -17,6 +17,7 @@ Descripción:
 #include "tListaAdyacencia.h"
 #include <stdio.h>
 #include "tVertice.h"
+#include "tGrafo.h"
 
 void CrearListaVacia(tListaAdy *l) {
     *l = NULL;
@@ -83,13 +84,14 @@ int perteneceLista (tVertice v, tPeso peso, tListaAdy l) {
     struct NodoAdy *aux = l;
 
     while (aux != NULL && !pertenece) {
-        if (igualVertice(v, aux->ciudad), igualPeso(peso, aux->info)) {
+        if (igualVertice(v, aux->ciudad) && igualPeso(peso, aux->info)) {
             pertenece = 1;
         }
         aux = aux->sig;
     }
     return pertenece;
 }
+
 
 void eliminarElementoLista(tListaAdy *l,  tVertice v, tPeso peso) {
     if (!EsListaVacia(*l) && perteneceLista(v, peso, *l)) {
@@ -174,17 +176,3 @@ void mostrarLista(tListaAdy l) {
     }
 }
 
-
-//Funciones utilizadas en el main
-
-void mostrarLista_1escala(tListaAdy l) {
-    struct NodoAdy *aux = l;
-
-
-    while (aux != NULL) {
-        mostraVertice(aux->ciudad);
-        aux = aux->sig;
-    }
-
-
-}

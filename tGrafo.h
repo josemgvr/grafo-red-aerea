@@ -24,15 +24,5 @@ void EliminarVertice (tGrafo *g, tVertice v); //EliminarCiudad
 void MostrarGrafo(tGrafo g);
 void RecorridoEnAnchura(tGrafo *g); //Aun falta implementarlo
 
-//Funciones utilizadas en el main
-
-void consultar_destinos(tGrafo g, tVertice v);
-void consultar_destinos_1escala(tGrafo g, tVertice v);
-
-void consultar_trayecto_mas_barato(tGrafo g);
-void consultar_trayecto_mas_caro(tGrafo g);
-void consultar_trayecto_mas_corto(tGrafo g);
-void consultar_trayecto_mas_largo(tGrafo g);
-
 
 #endif //PRACTICA_TGRAFO_H
