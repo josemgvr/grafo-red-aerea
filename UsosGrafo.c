@@ -39,7 +39,7 @@ void consultar_destinos_1escala(tGrafo g, tVertice v) {
         while (aux_lady != NULL) {
 
             asignarVertice(&v2,aux_lady->ciudad);
-            consultar_destinos(g,v);
+            consultar_destinos(g,v2);
             aux_lady = aux_lady->sig;
         }
 
@@ -51,14 +51,14 @@ void consultar_destinos_1escala(tGrafo g, tVertice v) {
 int consultar_trayecto_entre_ciudades(tGrafo g, tVertice v1, tVertice v2) {
     struct NodoLista *aux = g;
     int pertenece = 0;
-    tVertice v;
+
 
     while (aux != NULL && !igualVertice(aux->ciudad, v1)) {
         aux = aux->sig;
     }
 
     if (aux != NULL) {
-
+      pertenece = perteneceLista_vertice(aux->ady, v2);
 
     } else {
         printf("No se ha encontrado la ciudad de origen, intentelo de nuevo \n");

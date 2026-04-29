@@ -10,6 +10,7 @@ void quitarCaracteresFinales_Compañia(char cadena[MAX_COM]);
 int main(void) {
     int seleccion;
     int fcontrol = 1;
+    int verdadero = 0;
     tGrafo g;
     tVertice v1, v2;;
     tPeso peso;
@@ -74,9 +75,24 @@ int main(void) {
                    gets(ciudad);
                    crearVertice(ciudad, &v1);
                    consultar_destinos_1escala(g, v1);
+
+
                    break;
                case 4:
-                   printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
+                   fflush(stdin);
+                   printf("Ingrese la ciudad de origen \n");
+                   gets(ciudad);
+                   asignarVertice(ciudad, &v1);
+
+                   printf("Ingrese la ciudad de origen \n");
+                   gets(destino);
+                   asignarVertice(destino, &v2);
+                   verdadero = consultar_trayecto_entre_ciudades(g,v1,v2);
+                   if (verdadero) {
+                       printf("Existe un trayecto entre las dos ciudades \n");
+                   } else {
+                       printf("NO hay un trayecto entre las dos ciudades \n");
+                   }
                    break;
                case 5:
                    printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");

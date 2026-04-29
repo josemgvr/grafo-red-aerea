@@ -92,6 +92,18 @@ int perteneceLista (tVertice v, tPeso peso, tListaAdy l) {
     return pertenece;
 }
 
+int perteneceLista_vertice(tListaAdy l, tVertice v) {
+    int pertenece = 0;
+    struct NodoAdy *aux = l;
+
+    while (aux != NULL && !pertenece) {
+        if (igualVertice(v, aux->ciudad)) {
+            pertenece = 1;
+        }
+        aux = aux->sig;
+    }
+    return pertenece;
+}
 
 void eliminarElementoLista(tListaAdy *l,  tVertice v, tPeso peso) {
     if (!EsListaVacia(*l) && perteneceLista(v, peso, *l)) {

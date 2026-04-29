@@ -34,7 +34,7 @@ void obtenerultimoLista(tListaAdy l, tVertice* v, tPeso *peso);
 
 int longitudLista (tListaAdy l);
 int perteneceLista (tVertice v,tPeso Peso, tListaAdy l);
-
+int perteneceLista_vertice(tListaAdy l, tVertice v);
 
 
 void eliminarElementoLista(tListaAdy *l,  tVertice v, tPeso peso);
