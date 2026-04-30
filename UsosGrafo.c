@@ -44,20 +44,29 @@ void consultar_destinos_1escala(tGrafo g, tVertice v) {
         crearVertice(nothing, &nothing_v);
         guardar_vertices (aux->ady,&c_primer_destino);
 
-        while (!igualVertice(nothing_v, v2)) {
-            obtenerPrimeroConjunto(&c_primer_destino,&v2);
-            aux = g;
+        if (!EsConjuntoVacio(c_primer_destino)) {
+            while (!igualVertice(nothing_v, v2)) {
+                obtenerPrimeroConjunto(&c_primer_destino,&v2);
+                aux = g;
 
-            while (aux != NULL && !igualVertice(aux->ciudad, v2)) {
-                aux = aux->sig;
+                while (aux != NULL && !igualVertice(aux->ciudad, v2)) {
+                    aux = aux->sig;
+                }
+                if (aux != NULL) {
+                    guardar_vertices (aux->ady, &c_ultimo_destino);
+                }
             }
-            if (aux != NULL) {
-                guardar_vertices (aux->ady, &c_ultimo_destino);
+            if (!EsConjuntoVacio(c_ultimo_destino)) {
+                printf("Posibles destinos haciendo una escala: \n");
+                mostrarConjunto(c_ultimo_destino);
+            } else {
+                printf("Puedes ir a otras ciudades, pero estas en estas no puedes hacer escala \n");
             }
+
+        } else {
+            printf("No hay posibles destinos en los que hacer la escala \n");
         }
 
-        printf("Posibles destinos haciendo una escala: \n");
-        mostrarConjunto(c_ultimo_destino);
     } else {
         printf("No hay posibles destinos haciendo una escala \n");
     }

@@ -4,6 +4,7 @@
 #include "tVertice.h"
 #include "tPeso.h"
 #include "tListaAdyacencia.h"
+#include "UsosGrafo.h"
 
 void quitarCaracteresFinales_Ciudades(char cadena[MAX_CIU]);
 void quitarCaracteresFinales_Compañia(char cadena[MAX_COM]);
@@ -111,8 +112,11 @@ int main(void) {
                    break;
                    default: printf("Error: no has seleccionado una operacion valida. Intentelo de nuevo \n");
            }
-           printf("Introduzca cualquier valor para continuar \n");
-           scanf(" %d", &seleccion);
+           if (seleccion !=0) {
+               printf("Introduzca cualquier valor para continuar \n");
+               scanf(" %d", &seleccion);
+           }
+
        } while (seleccion != 0);
 
 
