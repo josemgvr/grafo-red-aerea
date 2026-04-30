@@ -22,6 +22,7 @@ void insertarArista(tGrafo *g, tVertice v1, tVertice v2, tPeso peso);
 void insertarVertice (tGrafo *g, tVertice v); //InsertarCiudad
 void EliminarVertice (tGrafo *g, tVertice v); //EliminarCiudad
 void MostrarGrafo(tGrafo g);
+void asignarGrafo(tGrafo* g1, tGrafo g2);
 void RecorridoEnAnchura(tGrafo *g); //Aun falta implementarlo
 
 

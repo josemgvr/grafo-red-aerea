@@ -97,11 +97,61 @@ int consultar_trayecto_entre_ciudades(tGrafo g, tVertice v1, tVertice v2) {
 
 
 void consultar_trayecto_mas_barato(tGrafo g) {
-    struct NodoLista *aux = g;
+    tGrafo g_copia;
+    CrearGrafoVacio(&g_copia);
+    asignarGrafo(&g_copia,g);
 
-    while (aux != NULL) {
+    struct NodoLista *aux = g_copia;
 
+    if (aux != NULL) {
+        tPeso peso1, peso2;
+        int EsMenor = 0;
+
+        getpeso_aristas(&aux->ady, &peso1);
+        getpeso_aristas(&aux->ady, &peso2);
+
+        if (!EsPesoVacio(peso1) && !EsPesoVacio(peso2)) {
+            EsMenor = EsMenor_Primero_Dinero(peso1, peso2);
+
+            //Suponemos que no hay precios que sean iguales
+            if (!EsMenor) {
+                asignarPeso(&peso1, peso2);
+            }
+
+            while (aux != NULL) {
+                while (!EsListaVacia(aux->ady)) {
+                    getpeso_aristas(&aux->ady, &peso2);
+
+                    if (!EsPesoVacio(peso2)) {
+                        //Suponemos que no hay precios que sean iguales
+                        EsMenor = EsMenor_Primero_Dinero(peso1, peso2);
+                        if (!EsMenor) {
+                            asignarPeso(&peso1, peso2);
+                        }
+                    }
+                }
+                aux = aux->sig;
+
+            }
+        } else {
+            tVertice v;
+            asignarVertice(&v, aux->ciudad);
+            EliminarVertice(&g_copia, v);
+            consultar_trayecto_mas_barato(g_copia);
+        }
+
+        if (!EsPesoVacio(peso1)) {
+            printf("El trayecto mas barato es el de: \n");
+            mostraPeso(peso1);
+
+        }
+
+
+    } else {
+        printf("No hay trayectos disponbles \n");
     }
+
+
 
 }
 

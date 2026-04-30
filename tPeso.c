@@ -15,6 +15,9 @@ Descripción:
 #include "tPeso.h"
 #include "string.h"
 
+int EsPesoVacio(tPeso p) {
+    return strcmp("nothing", p.compañia) == 0 && p.precio == 0 && p.tiempo == 0;
+}
 void asignarPeso(tPeso* e1, tPeso e2) {
     e1->precio = e2.precio;
     e1->tiempo = e2.tiempo;
@@ -36,4 +39,18 @@ void mostraPeso(tPeso t) {
     printf("Compania: ");
     puts(t.compañia);
     printf("\n");
+}
+
+int EsMayor_Primero_Tiempo(tPeso t1, tPeso t2) {
+    return t1.tiempo > t2.tiempo;
+}
+
+int EsMenor_Primero_Tiempo(tPeso t1, tPeso t2) {
+    return t1.tiempo < t2.tiempo;
+}
+int EsMayor_Primero_Dinero(tPeso t1, tPeso t2) {
+    return t1.precio > t2.precio;
+}
+int EsMenor_Primero_Dinero(tPeso t1, tPeso t2) {
+    return t1.precio < t2.precio;
 }

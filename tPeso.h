@@ -23,10 +23,15 @@ typedef struct {
     int precio;
 } tPeso;
 
+int EsPesoVacio(tPeso p);
 void asignarPeso(tPeso* e1, tPeso e2);
 void crearPeso(char compañia[MAX_COM], int tiempo, int precio, tPeso* e); //TElemento crearElemento(int num);
 int igualPeso(tPeso uno, tPeso dos);
 void mostraPeso(tPeso t);
 
+int EsMayor_Primero_Tiempo(tPeso t1, tPeso t2);
+int EsMenor_Primero_Tiempo(tPeso t1, tPeso t2);
+int EsMayor_Primero_Dinero(tPeso t1, tPeso t2);
+int EsMenor_Primero_Dinero(tPeso t1, tPeso t2);
 
 #endif //PRACTICA_TPESO_H

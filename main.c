@@ -85,7 +85,7 @@ int main(void) {
                    gets(ciudad);
                    asignarVertice(ciudad, &v1);
 
-                   printf("Ingrese la ciudad de origen \n");
+                   printf("Ingrese la ciudad de destino \n");
                    gets(destino);
                    asignarVertice(destino, &v2);
                    verdadero = consultar_trayecto_entre_ciudades(g,v1,v2);
@@ -102,7 +102,20 @@ int main(void) {
                    printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
                    break;
                case 7:
-                   printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
+                   int caro = 0;
+
+                   printf("Ingrese 0 si desea ver el mas barato o un 1 si desea el mas caro \n");
+                   fflush(stdin);
+                   scanf(" %d", &caro);
+
+                   switch (caro) {
+                       case 0: consultar_trayecto_mas_barato(g);
+                           break;
+                       case 1:
+                           break;
+                       default: printf("Has ingresado un número incorrecto, intentelo de nuevo \n");
+                   }
+
                    break;
                case 8:
                    printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");

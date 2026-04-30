@@ -46,6 +46,9 @@ void asignarLista (tListaAdy original, tListaAdy *copia);
 void destruirLista(tListaAdy *l);
 void mostrarLista(tListaAdy l);
 void guardar_vertices(tListaAdy l, tConjunto *c);
+void getpeso_aristas (tListaAdy *l, tPeso* peso);
+
+
 
 
 

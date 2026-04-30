@@ -89,6 +89,44 @@ void MostrarGrafo(tGrafo g) {
     }
 }
 
+void asignarGrafo(tGrafo* g1, tGrafo g2) {
+    struct NodoLista *aux1 = g2;
+    struct NodoLista *aux2;
+    tGrafo aux_grafo;
+    CrearGrafoVacio(&aux_grafo);
+
+    while (aux1 != NULL) {
+        struct NodoLista *new = (struct NodoLista *)malloc(sizeof(struct NodoLista));
+        asignarVertice(&new->ciudad,aux1->ciudad);
+        CrearListaVacia(&new->ady);
+        asignarLista(aux1->ady, &new->ady);
+        new->sig = aux_grafo;
+        aux_grafo = new;
+        aux1 = aux1->sig;
+    }
+
+    aux2 = aux_grafo;
+
+    while (aux2 != NULL) {
+        struct NodoLista *new = (struct NodoLista *)malloc(sizeof(struct NodoLista));
+        asignarVertice(&new->ciudad,aux2->ciudad);
+        CrearListaVacia(&new->ady);
+        asignarLista(aux2->ady, &new->ady);
+        new->sig = *g1;
+        *g1 = new;
+        aux2 = aux2->sig;
+    }
+
+    // fix: liberar el grafo auxiliar intermedio
+    struct NodoLista *tmp;
+    while (aux_grafo != NULL) {
+        tmp = aux_grafo;
+        aux_grafo = aux_grafo->sig;
+        // Si ady también tiene memoria dinámica, liberarla aquí
+        free(tmp);
+    }
+}
+
 void RecorridoEnAnchura(tGrafo *g) { //Aun falta implementarlo
 
 }

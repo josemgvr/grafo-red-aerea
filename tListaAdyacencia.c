@@ -29,20 +29,13 @@ int EsListaVacia(tListaAdy l) {
 }
 
 void insertarArista_lady(tListaAdy *l,tVertice v ,tPeso peso) {
-    struct NodoAdy *aux = *l;
-
-    while (aux != NULL && !igualVertice(aux->ciudad, v)) {
-        aux = aux->sig;
-    }
-
     //Por comodidad lo insertarmos al principio
-    if (aux == NULL) {
         struct NodoAdy *new = (struct NodoAdy*)malloc(sizeof(struct NodoAdy));
         asignarVertice( &(new->ciudad), v);
         asignarPeso(&(new->info), peso);
         new->sig = *l;
         *l = new;
-    }
+
 }
 
 
@@ -167,8 +160,10 @@ void asignarLista (tListaAdy original, tListaAdy *copia) {
 void destruirLista(tListaAdy *l) {
     struct NodoAdy *aux = *l;
     while (aux != NULL) {
-        struct NodoAdy *aux = *l;
-        eliminarElementoLista(l, aux->ciudad, aux->info);
+        aux = *l;
+        if (aux != NULL) {
+            eliminarElementoLista(l, aux->ciudad, aux->info);
+        }
     }
 }
 
@@ -199,4 +194,14 @@ void guardar_vertices(tListaAdy l, tConjunto *c) {
         poner(c, v);
         aux = aux->sig;
     }
+}
+
+void getpeso_aristas (tListaAdy *l, tPeso* peso) {
+    if (!EsListaVacia(*l)) {
+        asignarPeso(peso,(*l)->info);
+        eliminarElementoLista(l, (*l)->ciudad, (*l)->info);
+    } else {
+        crearPeso("nothing",0,0,peso);
+    }
+
 }
