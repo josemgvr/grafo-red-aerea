@@ -18,5 +18,5 @@ void consultar_trayecto_mas_barato(tGrafo g);
 void consultar_trayecto_mas_caro(tGrafo g);
 void consultar_trayecto_mas_corto(tGrafo g);
 void consultar_trayecto_mas_largo(tGrafo g);
-
+void Consultar_ciudad_sumidero_y_fuente(tGrafo g);
 #endif //USOSGRAFO_H

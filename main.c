@@ -96,7 +96,7 @@ int main(void) {
                    }
                    break;
                case 5:
-                   printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
+                   Consultar_ciudad_sumidero_y_fuente(g);
                    break;
                case 6:
                    Consular_Trayecto_mas_companyias(g);

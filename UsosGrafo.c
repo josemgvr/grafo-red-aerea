@@ -356,3 +356,30 @@ void Consular_Trayecto_mas_companyias(tGrafo g) {
         printf("Error: no hay ningun trayecto guardado \n");
     }
 }
+void Consultar_ciudad_sumidero_y_fuente(tGrafo g) {
+    struct NodoLista *aux = g;
+    int longitud = 0;
+    tVertice v;
+
+    //Suponemos que es un grafo conexo
+    printf("Las ciudades fuentes son: \n");
+    while (aux != NULL) {
+        longitud = longitudLista(aux->ady);
+        if (longitud > 0) {
+            mostrarVertice(aux->ciudad);
+        }
+        aux = aux->sig;
+    }
+    printf("\n");
+
+    aux = g;
+    printf("Las ciudades sumidero son: \n");
+    while (aux != NULL) {
+        longitud = longitudLista(aux->ady);
+        if (longitud == 0) {
+            mostrarVertice(aux->ciudad);
+        }
+        aux = aux->sig;
+    }
+    printf("\n");
+}
