@@ -151,12 +151,175 @@ void consultar_trayecto_mas_barato(tGrafo g) {
         printf("No hay trayectos disponbles \n");
     }
 
-
-
 }
 
+//Para la opcion 7 y 8, es el mismo codigo pero cambia el nombre de algunas variables y la llamada de algunas funciones.
+//Pero funciona todo practicamente igual
+
+void consultar_trayecto_mas_caro(tGrafo g) {
+    tGrafo g_copia;
+    CrearGrafoVacio(&g_copia);
+    asignarGrafo(&g_copia,g);
+
+    struct NodoLista *aux = g_copia;
+
+    if (aux != NULL) {
+        tPeso peso1, peso2;
+        int EsMayor = 0;
+
+        getpeso_aristas(&aux->ady, &peso1);
+        getpeso_aristas(&aux->ady, &peso2);
+
+        if (!EsPesoVacio(peso1) && !EsPesoVacio(peso2)) {
+            EsMayor = EsMayor_Primero_Dinero(peso1, peso2);
+
+            //Suponemos que no hay precios que sean iguales
+            if (!EsMayor) {
+                asignarPeso(&peso1, peso2);
+            }
+
+            while (aux != NULL) {
+                while (!EsListaVacia(aux->ady)) {
+                    getpeso_aristas(&aux->ady, &peso2);
+
+                    if (!EsPesoVacio(peso2)) {
+                        //Suponemos que no hay precios que sean iguales
+                        EsMayor = EsMayor_Primero_Dinero(peso1, peso2);
+                        if (!EsMayor) {
+                            asignarPeso(&peso1, peso2);
+                        }
+                    }
+                }
+                aux = aux->sig;
+
+            }
+        } else {
+            tVertice v;
+            asignarVertice(&v, aux->ciudad);
+            EliminarVertice(&g_copia, v);
+            consultar_trayecto_mas_caro(g_copia);
+        }
+
+        if (!EsPesoVacio(peso1)) {
+            printf("El trayecto mas caro es el de: \n");
+            mostraPeso(peso1);
+
+        }
 
 
-void consultar_trayecto_mas_caro(tGrafo g);
-void consultar_trayecto_mas_corto(tGrafo g);
-void consultar_trayecto_mas_largo(tGrafo g);
+    } else {
+        printf("No hay trayectos disponbles \n");
+    }
+}
+void consultar_trayecto_mas_corto(tGrafo g) {
+    tGrafo g_copia;
+    CrearGrafoVacio(&g_copia);
+    asignarGrafo(&g_copia,g);
+
+    struct NodoLista *aux = g_copia;
+
+    if (aux != NULL) {
+        tPeso peso1, peso2;
+        int EsCorto = 0;
+
+        getpeso_aristas(&aux->ady, &peso1);
+        getpeso_aristas(&aux->ady, &peso2);
+
+        if (!EsPesoVacio(peso1) && !EsPesoVacio(peso2)) {
+            EsCorto = EsMenor_Primero_Tiempo(peso1, peso2);
+
+            //Suponemos que no hay precios que sean iguales
+            if (!EsCorto) {
+                asignarPeso(&peso1, peso2);
+            }
+
+            while (aux != NULL) {
+                while (!EsListaVacia(aux->ady)) {
+                    getpeso_aristas(&aux->ady, &peso2);
+
+                    if (!EsPesoVacio(peso2)) {
+                        //Suponemos que no hay precios que sean iguales
+                        EsCorto = EsMenor_Primero_Tiempo(peso1, peso2);
+                        if (!EsCorto) {
+                            asignarPeso(&peso1, peso2);
+                        }
+                    }
+                }
+                aux = aux->sig;
+
+            }
+        } else {
+            tVertice v;
+            asignarVertice(&v, aux->ciudad);
+            EliminarVertice(&g_copia, v);
+            consultar_trayecto_mas_corto(g_copia);
+        }
+
+        if (!EsPesoVacio(peso1)) {
+            printf("El trayecto mas corto es el de: \n");
+            mostraPeso(peso1);
+
+        }
+
+
+    } else {
+        printf("No hay trayectos disponbles \n");
+    }
+}
+
+void consultar_trayecto_mas_largo(tGrafo g) {
+    tGrafo g_copia;
+    CrearGrafoVacio(&g_copia);
+    asignarGrafo(&g_copia,g);
+
+    struct NodoLista *aux = g_copia;
+
+    if (aux != NULL) {
+        tPeso peso1, peso2;
+        int EsLargo = 0;
+
+        getpeso_aristas(&aux->ady, &peso1);
+        getpeso_aristas(&aux->ady, &peso2);
+
+        if (!EsPesoVacio(peso1) && !EsPesoVacio(peso2)) {
+            EsLargo = EsMayor_Primero_Tiempo(peso1, peso2);
+
+            //Suponemos que no hay precios que sean iguales
+            if (!EsLargo) {
+                asignarPeso(&peso1, peso2);
+            }
+
+            while (aux != NULL) {
+                while (!EsListaVacia(aux->ady)) {
+                    getpeso_aristas(&aux->ady, &peso2);
+
+                    if (!EsPesoVacio(peso2)) {
+                        //Suponemos que no hay precios que sean iguales
+                        EsLargo = EsMayor_Primero_Tiempo(peso1, peso2);
+                        if (!EsLargo) {
+                            asignarPeso(&peso1, peso2);
+                        }
+                    }
+                }
+                aux = aux->sig;
+
+            }
+        } else {
+            tVertice v;
+            asignarVertice(&v, aux->ciudad);
+            EliminarVertice(&g_copia, v);
+            consultar_trayecto_mas_largo(g_copia);
+        }
+
+        if (!EsPesoVacio(peso1)) {
+            printf("El trayecto mas largo es el de: \n");
+            buscarVertice_aristas(&g_copia);
+            mostraPeso(peso1);
+
+        }
+
+
+    } else {
+        printf("No hay trayectos disponbles \n");
+    }
+}

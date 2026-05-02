@@ -205,3 +205,14 @@ void getpeso_aristas (tListaAdy *l, tPeso* peso) {
     }
 
 }
+
+void buscarVertice_aristas(tListaAdy l, tPeso peso, tVertice *v) {
+    struct NodoAdy *aux = l;
+    while (aux != NULL && igualPeso(aux->info, peso)) {
+        aux = aux->sig;
+    }
+
+    if (aux != NULL) {
+        asignarVertice(v,aux->ciudad);
+    }
+}

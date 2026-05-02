@@ -111,14 +111,26 @@ int main(void) {
                    switch (caro) {
                        case 0: consultar_trayecto_mas_barato(g);
                            break;
-                       case 1:
+                       case 1: consultar_trayecto_mas_caro(g);
                            break;
                        default: printf("Has ingresado un número incorrecto, intentelo de nuevo \n");
                    }
 
                    break;
                case 8:
-                   printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
+                   int largo = 0;
+
+                   printf("Ingrese 0 si desea ver el mas corto o un 1 si desea el mas largo \n");
+                   fflush(stdin);
+                   scanf(" %d", &largo);
+
+                   switch (largo) {
+                       case 0: consultar_trayecto_mas_corto(g);
+                           break;
+                       case 1: consultar_trayecto_mas_largo(g);
+                           break;
+                       default: printf("Has ingresado un número incorrecto, intentelo de nuevo \n");
+                   }
                    break;
                case 0:
                    printf("Hasta pronto! \n");
