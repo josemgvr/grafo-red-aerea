@@ -82,7 +82,7 @@ void MostrarGrafo(tGrafo g) {
 
     while (aux != NULL) {
         printf("-");
-        mostraVertice(aux->ciudad);
+        mostrarVertice(aux->ciudad);
         printf("Destinos: \n");
         mostrarLista(aux->ady);
         aux = aux->sig;

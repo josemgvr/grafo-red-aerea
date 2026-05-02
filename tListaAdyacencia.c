@@ -119,6 +119,16 @@ void eliminarElementoLista(tListaAdy *l,  tVertice v, tPeso peso) {
     }
 }
 
+int logitudLista (tListaAdy l) {
+    struct NodoAdy *aux = l;
+    int longitud = 0;
+    while (aux != NULL) {
+        longitud++;
+        aux = aux->sig;
+    }
+    return longitud;
+}
+
 int igualLista (tListaAdy l1, tListaAdy l2) {
     struct NodoAdy *aux1 = l1;
     struct NodoAdy *aux2 = l2;
@@ -178,7 +188,7 @@ void mostrarLista(tListaAdy l) {
     while (aux != NULL) {
         printf("%d- \n", i+1);
         printf("Ciudad: ");
-        mostraVertice(aux->ciudad);
+        mostrarVertice(aux->ciudad);
         printf("\n");
         mostraPeso(aux->info);
         i++;
@@ -216,3 +226,77 @@ void buscarVertice_aristas(tListaAdy l, tPeso peso, tVertice *v) {
         asignarVertice(v,aux->ciudad);
     }
 }
+
+void obtener_vertice_lista(tListaAdy l, int pos, tVertice *v) {
+    int i;
+    struct NodoAdy *aux = l;
+    for (i = 0; i < pos; i++) {
+        aux = aux->sig;
+    }
+    asignarVertice(v,aux->ciudad);
+}
+
+int obtener_numero_companias(tListaAdy l, tVertice v) {
+    int cantidad = 0;
+    if (!EsListaVacia(l)) {
+        struct NodoAdy *aux = l;
+        while (aux != NULL) {
+            if (igualVertice(aux->ciudad, v)) {
+                cantidad++;
+            }
+            aux = aux->sig;
+        }
+    }
+    return cantidad;
+}
+
+
+/*
+int obtener_numero_companyias(tListaAdy l) {
+    int numero = 0;
+    if (EsListaVacia(l)) {
+        //Como solamente en este ejercio necesiamos un Conjunto para pesos, lo creare aqui
+        typedef struct Nodo_Conjunto_Peso {
+            tPeso info;
+            struct Nodo_Conjunto_Peso *sig;
+        } tNodo_Conjunto_Peso;
+
+        typedef struct Nodo_Conjunto_Peso *tConjunto_Peso;
+
+        struct NodoAdy *aux_l = l;
+        tNodo_Conjunto_Peso *aux_p = NULL;
+        tNodo_Conjunto_Peso *peso_new = (tNodo_Conjunto_Peso *)malloc(sizeof(tNodo_Conjunto_Peso));
+        tConjunto_Peso conjunto = NULL;
+        int pertenece = 0;
+
+        asignarPeso(&peso_new->info,aux_l->info);
+        peso_new->sig = conjunto;
+        conjunto = peso_new;
+        aux_p = conjunto;
+        aux_l = aux_l->sig;
+        numero++;
+
+        while (aux_l != NULL) {
+            pertenece = 0;
+            tNodo_Conjunto_Peso *peso_new = (tNodo_Conjunto_Peso *)malloc(sizeof(tNodo_Conjunto_Peso));
+
+            while (aux_p != NULL) {
+                if (igualPeso_Compania(aux_p->info, aux_p->info)) {
+                    pertenece = 1;
+                }
+                aux_p = aux_p->sig;
+            }
+
+            if (!pertenece) {
+                asignarPeso(&peso_new->info,aux_l->info);
+                peso_new->sig = conjunto;
+                conjunto = peso_new;
+                numero++;
+            }
+                aux_l = aux_l->sig;
+        }
+    }
+    return numero;
+
+}
+*/

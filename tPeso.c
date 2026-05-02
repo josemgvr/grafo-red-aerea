@@ -41,6 +41,12 @@ void mostraPeso(tPeso t) {
     printf("\n");
 }
 
+int igualPeso_Compania(tPeso p1, tPeso p2) {
+    return strcmp(p1.compañia,p2.compañia);
+}
+
+
+
 int EsMayor_Primero_Tiempo(tPeso t1, tPeso t2) {
     return t1.tiempo > t2.tiempo;
 }

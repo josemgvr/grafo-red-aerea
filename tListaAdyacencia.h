@@ -38,8 +38,8 @@ int longitudLista (tListaAdy l);
 int perteneceLista (tVertice v,tPeso Peso, tListaAdy l);
 int perteneceLista_vertice(tListaAdy l, tVertice v);
 
-
 void eliminarElementoLista(tListaAdy *l,  tVertice v, tPeso peso);
+int logitudLista (tListaAdy l);
 
 int igualLista (tListaAdy l1, tListaAdy l2);
 void asignarLista (tListaAdy original, tListaAdy *copia);
@@ -47,8 +47,8 @@ void destruirLista(tListaAdy *l);
 void mostrarLista(tListaAdy l);
 void guardar_vertices(tListaAdy l, tConjunto *c);
 void getpeso_aristas (tListaAdy *l, tPeso* peso);
-
-
+void obtener_vertice_lista(tListaAdy l, int pos, tVertice *v);
+int obtener_numero_companias(tListaAdy l, tVertice v);
 
 
 

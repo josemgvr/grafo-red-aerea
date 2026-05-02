@@ -52,7 +52,7 @@ int main(void) {
            printf("3- Consultar los destinos de una ciudad haciendo una escala \n");
            printf("4- Comprobar si es posible ir a dos ciudades sin hacer escala \n");
            printf("5- Analizar si existe alguna ciudad fuente y/o sumidero \n");
-           printf("6- Identificar el trayecto con un número mayor de compañias \n");
+           printf("6- Identificar el trayecto con un numero mayor de companias \n");
            printf("7- Identificar el trayecto mas caro y el mas barato \n");
            printf("8- Identificar el trayecto mas lento y el mas rapido\n");
            printf("0- Salir\n \n");
@@ -99,7 +99,7 @@ int main(void) {
                    printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
                    break;
                case 6:
-                   printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
+                   Consular_Trayecto_mas_companyias(g);
                    break;
                case 7:
                    int caro = 0;

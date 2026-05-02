@@ -12,6 +12,8 @@
 void consultar_destinos(tGrafo g, tVertice v);
 void consultar_destinos_1escala(tGrafo g, tVertice v);
 
+void Consular_Trayecto_mas_companyias(tGrafo g);
+
 void consultar_trayecto_mas_barato(tGrafo g);
 void consultar_trayecto_mas_caro(tGrafo g);
 void consultar_trayecto_mas_corto(tGrafo g);

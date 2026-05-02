@@ -323,3 +323,36 @@ void consultar_trayecto_mas_largo(tGrafo g) {
         printf("No hay trayectos disponbles \n");
     }
 }
+
+void Consular_Trayecto_mas_companyias(tGrafo g) {
+
+    if (!EsGrafoVacio(g)) {
+        struct NodoLista *act = g;
+        struct NodoLista *mayor = NULL;
+        int cantidad_guardada = 0, cantidad_actual = 0;
+        int pos, longitud;
+        tVertice v_actual, v_guardado;
+
+        while (act != NULL) {
+            longitud = longitudLista(act->ady);
+            for (pos = 0; pos < longitud; pos++) {
+                obtener_vertice_lista(act->ady, pos, &v_actual);
+                cantidad_actual = obtener_numero_companias(act->ady, v_actual);
+                if (cantidad_actual > cantidad_guardada) {
+                        cantidad_guardada = cantidad_actual;
+                        asignarVertice(&v_guardado, v_actual);
+                        mayor = act;
+                }
+            }
+            act = act->sig;
+        }
+
+        printf("El numero mayor de campanias es de %d entre: \n", cantidad_guardada);
+        mostrarVertice(mayor->ciudad);
+        printf(" hacia \n");
+        mostrarVertice(v_guardado);;
+
+    } else {
+        printf("Error: no hay ningun trayecto guardado \n");
+    }
+}

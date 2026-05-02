@@ -21,6 +21,6 @@ typedef char tVertice[MAX_CIU];
 void asignarVertice(tVertice* e1, tVertice e2);
 void crearVertice(char ciudad[MAX_CIU], tVertice* e); //TElemento crearElemento(int num);
 int igualVertice(tVertice uno, tVertice dos);
-void mostraVertice (tVertice t);
+void mostrasVertice (tVertice t);
 
 #endif //PRACTICA_TVERTICE_H

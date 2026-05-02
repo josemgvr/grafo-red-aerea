@@ -85,7 +85,7 @@ void obtenerPrimeroConjunto(tConjunto *c, tVertice *v) {
 void mostrarConjunto(tConjunto c) {
     tNodoConjunto *aux = c;
     while (aux != NULL) {
-        mostraVertice (aux->info);
+        mostrarVertice (aux->info);
         aux = aux->sig;
     }
 }

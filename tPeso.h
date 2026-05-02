@@ -29,6 +29,7 @@ void crearPeso(char compañia[MAX_COM], int tiempo, int precio, tPeso* e); //TEl
 int igualPeso(tPeso uno, tPeso dos);
 void mostraPeso(tPeso t);
 
+int igualPeso_Compania(tPeso p1, tPeso p2);
 int EsMayor_Primero_Tiempo(tPeso t1, tPeso t2);
 int EsMenor_Primero_Tiempo(tPeso t1, tPeso t2);
 int EsMayor_Primero_Dinero(tPeso t1, tPeso t2);

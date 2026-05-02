@@ -24,6 +24,6 @@ void crearVertice(char ciudad[MAX_CIU], tVertice* e) {
 int igualVertice(tVertice uno, tVertice dos) {
     return strcmp(uno,dos) == 0;
 }
-void mostraVertice (tVertice t) {
+void mostrarVertice (tVertice t) {
     puts(t);
 }
