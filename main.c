@@ -1,3 +1,19 @@
+/********************************************************************************
+Módulo:         Main
+Fichero:        (x) Programa  ( ) Espec. TAD  ( ) Impl. TAD
+Autor:          Jose Miguel Villora
+Fecha:          27/04/2026
+Descripción:
+    Programa principal de la práctica de grafos. Lee el fichero vuelos.txt y
+    construye el grafo de la red aérea europea insertando los vértices (ciudades)
+    y las aristas (vuelos) con su correspondiente peso (compañía, tiempo y precio).
+    Una vez cargado el grafo, presenta al usuario un menú interactivo con el que
+    puede realizar las siguientes consultas: destinos directos desde una ciudad,
+    comprobación de conectividad del grafo, destinos con una escala, existencia
+    de vuelo directo entre dos ciudades, ciudades fuente y sumidero, trayecto con
+    mayor número de compañías, trayectos más caros/baratos y más lentos/rápidos.
+*********************************************************************************/
+
 #include <stdio.h>
 #include <string.h>
 #include "tGrafo.h"
@@ -145,8 +161,6 @@ int main(void) {
 
        } while (seleccion != 0);
 
-
-
    } else {
        printf("Error al abrir el archivo");
    }
@@ -154,17 +168,5 @@ int main(void) {
     if (fclose(pFichero) != 0) {
         printf("Error al cerrar el fichero");
     }
-
-
-
-
-
 }
 
-void quitarCaracteresFinales_Compañia(char cadena[MAX_COM]) {
-    cadena[strlen(cadena)-1] = '\0';
-}
-
-void quitarCaracteresFinales_Ciudades(char cadena[MAX_CIU]) {
-    cadena[strlen(cadena)-1] = '\0';
-}

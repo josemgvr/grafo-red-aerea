@@ -1,6 +1,17 @@
-//
-// Created by jmvil on 27/04/2026.
-//
+/********************************************************************************
+Módulo:         tGrafo
+Fichero:        ( ) Programa  ( ) Espec. TAD  (x) Impl. TAD
+Autor:          Jose Miguel Villora
+Fecha:          27/04/2026
+Descripción:
+    Este fichero implementa el TAD tGrafo, que modela la red aérea europea como
+    un grafo dirigido y ponderado mediante una lista enlazada de nodos. Cada nodo
+    representa una ciudad (tVertice) con su lista de adyacencia (tListaAdy). En
+    este módulo se desarrollan las operaciones de creación, inserción y eliminación
+    de vértices y aristas, comprobación de pertenencia, visualización del grafo
+    completo, asignación (copia profunda) y el recorrido en anchura (BFS), que
+    utiliza los TADs tCola y tConjunto como estructuras auxiliares.
+*********************************************************************************/
 #include <stdlib.h>
 #include "tGrafo.h"
 #include "tVertice.h"

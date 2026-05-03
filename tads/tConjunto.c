@@ -1,6 +1,18 @@
-//
-// Created by jm.villora.2025 on 29/04/2026.
-//
+/********************************************************************************
+Módulo:         tConjunto
+Fichero:        ( ) Programa  ( ) Espec. TAD  (x) Impl. TAD
+Autor:          Jose Miguel Villora
+Fecha:          29/04/2026
+Descripción:
+    Este fichero implementa el TAD tConjunto, que representa un conjunto dinámico
+    de vértices (tVertice) sin elementos repetidos, basado en una lista enlazada.
+    Se emplea como estructura auxiliar en el recorrido en anchura (BFS) del grafo
+    para llevar el control de los nodos visitados. En este módulo se desarrollan
+    las operaciones de creación, comprobación de vacío, pertenencia, inserción sin
+    duplicados, eliminación, obtención del primer elemento, asignación (copia),
+    comparación de igualdad entre conjuntos y visualización por pantalla,
+    gestionando la memoria dinámica mediante malloc y free.
+*********************************************************************************/
 
 #include "tConjunto.h"
 #include <stdio.h>

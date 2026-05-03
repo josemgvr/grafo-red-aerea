@@ -1,6 +1,20 @@
-//
-// Created by jm.villora.2025 on 29/04/2026.
-//
+/********************************************************************************
+Módulo:         UsosGrafo
+Fichero:        ( ) Programa  ( ) Espec. TAD  (x) Impl. TAD
+Autor:          Jose Miguel Villora
+Fecha:          29/04/2026
+Descripción:
+    Este fichero implementa el módulo UsosGrafo, que contiene las funciones de
+    consulta de alto nivel utilizadas desde el programa principal. Las funciones
+    acceden directamente a la estructura interna del TAD tGrafo para realizar las
+    siguientes operaciones: consulta de destinos directos desde una ciudad, destinos
+    alcanzables con una escala, comprobación de vuelo directo entre dos ciudades,
+    identificación de ciudades fuente y sumidero, búsqueda del trayecto con mayor
+    número de compañías operando, y obtención de los trayectos más caros, baratos,
+    rápidos y lentos. Además, implementa la comprobación de conectividad del grafo
+    lanzando un BFS desde cada vértice y comparando el conjunto de nodos visitados
+    con el conjunto total de ciudades.
+*********************************************************************************/
 
 #include "UsosGrafo.h"
 
@@ -11,9 +25,6 @@
 #include "tConjunto.h"
 #include "tVertice.h"
 #include <stdio.h>
-
-//Funciones utilizadas en el main, rompemos el encapsulado
-
 
 void consultar_destinos(tGrafo g, tVertice v) {
     struct NodoLista *aux = g;

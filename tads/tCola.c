@@ -1,6 +1,16 @@
-//
-// Created by Usuario on 03/05/2026.
-//
+/********************************************************************************
+Módulo:         tCola
+Fichero:        ( ) Programa  ( ) Espec. TAD  (x) Impl. TAD
+Autor:          Jose Miguel Villora
+Fecha:          03/05/2026
+Descripción:
+    Este fichero implementa el TAD tCola, que representa una cola FIFO de vértices
+    (tVertice) con punteros al primer y al último nodo. La cola se emplea como
+    estructura auxiliar en el recorrido en anchura (BFS) del grafo de la red aérea.
+    En este módulo se desarrollan las operaciones de creación, comprobación de
+    vacío, inserción al final de la cola, consulta del primer elemento y
+    eliminación del primero, gestionando la memoria dinámica mediante malloc y free.
+*********************************************************************************/
 
 #include "tCola.h"
 #include <stdio.h>

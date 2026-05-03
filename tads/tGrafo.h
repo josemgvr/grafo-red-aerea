@@ -1,6 +1,16 @@
-//
-// Created by jmvil on 27/04/2026.
-//
+/********************************************************************************
+Módulo:         tGrafo
+Fichero:        ( ) Programa  (x) Espec. TAD  ( ) Impl. TAD
+Autor:          Jose Miguel Villora
+Fecha:          27/04/2026
+Descripción:
+    Este fichero define la especificación del TAD tGrafo, que representa un grafo
+    dirigido y ponderado implementado mediante una lista enlazada de nodos. Cada
+    nodo almacena una ciudad (tVertice) y su lista de adyacencia (tListaAdy), que
+    contiene los vuelos que parten desde dicha ciudad. Se proporcionan las
+    operaciones de creación, inserción y eliminación de vértices y aristas,
+    pertenencia, visualización, asignación y recorrido en anchura del grafo.
+*********************************************************************************/
 
 #ifndef PRACTICA_TGRAFO_H
 #define PRACTICA_TGRAFO_H

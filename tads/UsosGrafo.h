@@ -1,6 +1,20 @@
-//
-// Created by jm.villora.2025 on 29/04/2026.
-//
+/********************************************************************************
+Módulo:         UsosGrafo
+Fichero:        ( ) Programa  (x) Espec. TAD  ( ) Impl. TAD
+Autor:          Jose Miguel Villora
+Fecha:          29/04/2026
+Descripción:
+    Este fichero define la especificación del módulo UsosGrafo, que agrupa las
+    funciones de consulta de alto nivel sobre el grafo de la red aérea. Estas
+    funciones rompen intencionalmente el encapsulamiento del TAD tGrafo para
+    acceder directamente a la estructura interna y dar soporte al menú del
+    programa principal. Se incluyen consultas de destinos directos, destinos con
+    una escala, trayectos directos entre dos ciudades, ciudades fuente y sumidero,
+    trayecto con mayor número de compañías, y trayectos extremos en precio
+    y duración. También se incluye la comprobación de conectividad del grafo
+    mediante recorridos en anchura desde cada vértice.
+*********************************************************************************/
+ 
 
 #ifndef USOSGRAFO_H
 #define USOSGRAFO_H

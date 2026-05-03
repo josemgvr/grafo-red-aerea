@@ -1,6 +1,17 @@
-//
-// Created by jm.villora.2025 on 29/04/2026.
-//
+/********************************************************************************
+Módulo:         tConjunto
+Fichero:        ( ) Programa  (x) Espec. TAD  ( ) Impl. TAD
+Autor:          Jose Miguel Villora
+Fecha:          29/04/2026
+Descripción:
+    Este fichero define la especificación del TAD tConjunto, que representa un
+    conjunto dinámico de vértices (tVertice) sin elementos repetidos, implementado
+    mediante una lista enlazada. El conjunto se utiliza como estructura auxiliar
+    en el recorrido en anchura (BFS) para registrar los nodos ya visitados y
+    evitar ciclos. Se proporcionan las operaciones de creación, comprobación de
+    vacío, pertenencia, inserción, eliminación, obtención del primero, asignación,
+    comparación de igualdad y visualización.
+*********************************************************************************/
 
 #ifndef TCONJUNTO_H
 #define TCONJUNTO_H
