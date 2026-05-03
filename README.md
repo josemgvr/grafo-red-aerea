@@ -27,18 +27,18 @@ Las **ciudades** son los vértices del grafo. Se trabaja con ciudades europeas c
 
 ```
 grafos-red-aerea/
-├── src/
-│   ├── main.c                              # Programa principal y menú
-│   ├── UsosGrafo.c / UsosGrafo.h          # Funciones de consulta de alto nivel
+├── CMakeLists.txt
+├── main.c                                      # Programa principal y menú
 ├── tads/
-│   ├── tGrafo.c / tGrafo.h                # TAD Grafo (lista enlazada de nodos)
-│   ├── tListaAdyacencia.c / tListaAdyacencia.h  # TAD Lista de adyacencia
-│   ├── tVertice.c / tVertice.h            # TAD Vértice (ciudad)
-│   ├── tPeso.c / tPeso.h                  # TAD Peso (vuelo: compañía, tiempo, precio)
-│   ├── tCola.c / tCola.h                  # TAD Cola FIFO (auxiliar para BFS)
-│   └── tConjunto.c / tConjunto.h          # TAD Conjunto (auxiliar para BFS)
+│   ├── tGrafo.c / tGrafo.h                    # TAD Grafo (lista enlazada de nodos)
+│   ├── tListaAdyacencia.c / tListaAdyacencia.h # TAD Lista de adyacencia
+│   ├── tVertice.c / tVertice.h                # TAD Vértice (ciudad)
+│   ├── tPeso.c / tPeso.h                      # TAD Peso (vuelo: compañía, tiempo, precio)
+│   ├── tCola.c / tCola.h                      # TAD Cola FIFO (auxiliar para BFS)
+│   ├── tConjunto.c / tConjunto.h              # TAD Conjunto (auxiliar para BFS)
+│   └── UsosGrafo.c / UsosGrafo.h             # Funciones de consulta de alto nivel
 ├── datos/
-│   └── vuelos.txt                         # Fichero de entrada con los vuelos
+│   └── vuelos.txt                             # Fichero de entrada con los vuelos
 └── README.md
 ```
 
@@ -124,12 +124,16 @@ El recorrido en anchura (BFS) utiliza dos TADs auxiliares:
 
 ## 🚀 Compilación y ejecución
 
+El proyecto usa **CMake**. Para compilar y ejecutar:
+
 ```bash
-gcc src/*.c tads/*.c -I tads -o red_aerea
-./red_aerea
+mkdir build && cd build
+cmake ..
+cmake --build .
+./Practica
 ```
 
-> El programa lee `vuelos.txt` directamente desde el directorio de ejecución.
+> El `CMakeLists.txt` copia `vuelos.txt` automáticamente al directorio de compilación, por lo que no es necesario moverlo manualmente.
 
 ---
 
