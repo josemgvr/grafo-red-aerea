@@ -1,4 +1,4 @@
-/********************************************************************************
+/*********************************************************************************
 Módulo:         Main
 Fichero:        (x) Programa  ( ) Espec. TAD  ( ) Impl. TAD
 Autor:          Jose Miguel Villora
@@ -12,7 +12,7 @@ Descripción:
     comprobación de conectividad del grafo, destinos con una escala, existencia
     de vuelo directo entre dos ciudades, ciudades fuente y sumidero, trayecto con
     mayor número de compañías, trayectos más caros/baratos y más lentos/rápidos.
-*********************************************************************************/
+**********************************************************************************/
 
 #include <stdio.h>
 #include <string.h>

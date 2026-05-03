@@ -1,4 +1,4 @@
-/********************************************************************************
+/*********************************************************************************
 Módulo:         tCola
 Fichero:        ( ) Programa  (x) Espec. TAD  ( ) Impl. TAD
 Autor:          Jose Miguel Villora
@@ -10,7 +10,7 @@ Descripción:
     anchura (BFS) del grafo. Se proporcionan las operaciones de creación,
     comprobación de vacío, inserción al final, consulta del primero y eliminación
     del primero de la cola.
-*********************************************************************************/
+**********************************************************************************/
 
 #ifndef PRACTICA_TCOLA_H
 #define PRACTICA_TCOLA_H

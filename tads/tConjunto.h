@@ -1,4 +1,4 @@
-/********************************************************************************
+/*********************************************************************************
 Módulo:         tConjunto
 Fichero:        ( ) Programa  (x) Espec. TAD  ( ) Impl. TAD
 Autor:          Jose Miguel Villora
@@ -11,7 +11,7 @@ Descripción:
     evitar ciclos. Se proporcionan las operaciones de creación, comprobación de
     vacío, pertenencia, inserción, eliminación, obtención del primero, asignación,
     comparación de igualdad y visualización.
-*********************************************************************************/
+**********************************************************************************/
 
 #ifndef TCONJUNTO_H
 #define TCONJUNTO_H

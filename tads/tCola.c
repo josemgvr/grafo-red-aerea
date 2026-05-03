@@ -1,4 +1,4 @@
-/********************************************************************************
+/*********************************************************************************
 Módulo:         tCola
 Fichero:        ( ) Programa  ( ) Espec. TAD  (x) Impl. TAD
 Autor:          Jose Miguel Villora
@@ -10,7 +10,7 @@ Descripción:
     En este módulo se desarrollan las operaciones de creación, comprobación de
     vacío, inserción al final de la cola, consulta del primer elemento y
     eliminación del primero, gestionando la memoria dinámica mediante malloc y free.
-*********************************************************************************/
+**********************************************************************************/
 
 #include "tCola.h"
 #include <stdio.h>

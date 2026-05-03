@@ -1,4 +1,4 @@
-/********************************************************************************
+/*********************************************************************************
 Módulo:         tConjunto
 Fichero:        ( ) Programa  ( ) Espec. TAD  (x) Impl. TAD
 Autor:          Jose Miguel Villora
@@ -12,7 +12,7 @@ Descripción:
     duplicados, eliminación, obtención del primer elemento, asignación (copia),
     comparación de igualdad entre conjuntos y visualización por pantalla,
     gestionando la memoria dinámica mediante malloc y free.
-*********************************************************************************/
+**********************************************************************************/
 
 #include "tConjunto.h"
 #include <stdio.h>

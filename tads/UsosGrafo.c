@@ -1,4 +1,4 @@
-/********************************************************************************
+/*********************************************************************************
 Módulo:         UsosGrafo
 Fichero:        ( ) Programa  ( ) Espec. TAD  (x) Impl. TAD
 Autor:          Jose Miguel Villora
@@ -14,7 +14,7 @@ Descripción:
     rápidos y lentos. Además, implementa la comprobación de conectividad del grafo
     lanzando un BFS desde cada vértice y comparando el conjunto de nodos visitados
     con el conjunto total de ciudades.
-*********************************************************************************/
+**********************************************************************************/
 
 #include "UsosGrafo.h"
 

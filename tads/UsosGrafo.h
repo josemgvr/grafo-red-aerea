@@ -1,4 +1,4 @@
-/********************************************************************************
+/*********************************************************************************
 Módulo:         UsosGrafo
 Fichero:        ( ) Programa  (x) Espec. TAD  ( ) Impl. TAD
 Autor:          Jose Miguel Villora
@@ -13,7 +13,7 @@ Descripción:
     trayecto con mayor número de compañías, y trayectos extremos en precio
     y duración. También se incluye la comprobación de conectividad del grafo
     mediante recorridos en anchura desde cada vértice.
-*********************************************************************************/
+**********************************************************************************/
  
 
 #ifndef USOSGRAFO_H

@@ -1,4 +1,4 @@
-/********************************************************************************
+/*********************************************************************************
 Módulo:         tGrafo
 Fichero:        ( ) Programa  (x) Espec. TAD  ( ) Impl. TAD
 Autor:          Jose Miguel Villora
@@ -10,7 +10,7 @@ Descripción:
     contiene los vuelos que parten desde dicha ciudad. Se proporcionan las
     operaciones de creación, inserción y eliminación de vértices y aristas,
     pertenencia, visualización, asignación y recorrido en anchura del grafo.
-*********************************************************************************/
+**********************************************************************************/
 
 #ifndef PRACTICA_TGRAFO_H
 #define PRACTICA_TGRAFO_H

@@ -1,4 +1,4 @@
-/********************************************************************************
+/*********************************************************************************
 Módulo:         tGrafo
 Fichero:        ( ) Programa  ( ) Espec. TAD  (x) Impl. TAD
 Autor:          Jose Miguel Villora
@@ -11,7 +11,7 @@ Descripción:
     de vértices y aristas, comprobación de pertenencia, visualización del grafo
     completo, asignación (copia profunda) y el recorrido en anchura (BFS), que
     utiliza los TADs tCola y tConjunto como estructuras auxiliares.
-*********************************************************************************/
+**********************************************************************************/
 #include <stdlib.h>
 #include "tGrafo.h"
 #include "tVertice.h"
