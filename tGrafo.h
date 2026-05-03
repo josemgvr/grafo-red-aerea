@@ -23,7 +23,6 @@ void insertarVertice (tGrafo *g, tVertice v); //InsertarCiudad
 void EliminarVertice (tGrafo *g, tVertice v); //EliminarCiudad
 void MostrarGrafo(tGrafo g);
 void asignarGrafo(tGrafo* g1, tGrafo g2);
-void RecorridoEnAnchura(tGrafo *g); //Aun falta implementarlo
-
+void RecorridoEnAnchura(tGrafo g, tConjunto *visitados);
 
 #endif //PRACTICA_TGRAFO_H

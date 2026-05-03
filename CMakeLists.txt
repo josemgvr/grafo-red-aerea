@@ -12,6 +12,8 @@ add_executable(Practica
         UsosGrafo.c
         UsosGrafo.h
         tConjunto.c
-        tConjunto.h)
+        tConjunto.h
+        tCola.c
+        tCola.h)
 
 configure_file(vuelos.txt vuelos.txt COPYONLY)

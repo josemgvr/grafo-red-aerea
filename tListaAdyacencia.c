@@ -251,52 +251,13 @@ int obtener_numero_companias(tListaAdy l, tVertice v) {
 }
 
 
-/*
-int obtener_numero_companyias(tListaAdy l) {
-    int numero = 0;
-    if (EsListaVacia(l)) {
-        //Como solamente en este ejercio necesiamos un Conjunto para pesos, lo creare aqui
-        typedef struct Nodo_Conjunto_Peso {
-            tPeso info;
-            struct Nodo_Conjunto_Peso *sig;
-        } tNodo_Conjunto_Peso;
+void RecorridoEnAnchura_lista(tListaAdy l,tCola *cola) {
+    struct NodoAdy *aux = l;
 
-        typedef struct Nodo_Conjunto_Peso *tConjunto_Peso;
-
-        struct NodoAdy *aux_l = l;
-        tNodo_Conjunto_Peso *aux_p = NULL;
-        tNodo_Conjunto_Peso *peso_new = (tNodo_Conjunto_Peso *)malloc(sizeof(tNodo_Conjunto_Peso));
-        tConjunto_Peso conjunto = NULL;
-        int pertenece = 0;
-
-        asignarPeso(&peso_new->info,aux_l->info);
-        peso_new->sig = conjunto;
-        conjunto = peso_new;
-        aux_p = conjunto;
-        aux_l = aux_l->sig;
-        numero++;
-
-        while (aux_l != NULL) {
-            pertenece = 0;
-            tNodo_Conjunto_Peso *peso_new = (tNodo_Conjunto_Peso *)malloc(sizeof(tNodo_Conjunto_Peso));
-
-            while (aux_p != NULL) {
-                if (igualPeso_Compania(aux_p->info, aux_p->info)) {
-                    pertenece = 1;
-                }
-                aux_p = aux_p->sig;
-            }
-
-            if (!pertenece) {
-                asignarPeso(&peso_new->info,aux_l->info);
-                peso_new->sig = conjunto;
-                conjunto = peso_new;
-                numero++;
-            }
-                aux_l = aux_l->sig;
-        }
+    while (aux != NULL) {
+        InsertarCola(cola,aux->ciudad);
+        aux = aux->sig;
     }
-    return numero;
 
+    Eliminar_vertice_cola(cola);
 }
-*/

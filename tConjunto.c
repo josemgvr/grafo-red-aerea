@@ -89,3 +89,30 @@ void mostrarConjunto(tConjunto c) {
         aux = aux->sig;
     }
 }
+
+int EsIgualConjunto (tConjunto c1, tConjunto c2) {
+    struct NodoConjunto *aux = c1;
+    tVertice v;
+    int igual = 1;
+
+    while (aux != NULL) {
+        asignarVertice(&v,aux->info);
+        if (!pertenece(c2,v)) {
+            igual = 0;
+        }
+        aux = aux->sig;
+    }
+
+    if (igual) {
+        aux = c2;
+        while (aux != NULL) {
+            asignarVertice(&v,aux->info);
+            if (!pertenece(c1,v)) {
+                igual = 0;
+            }
+            aux = aux->sig;
+        }
+    }
+
+return igual;
+}

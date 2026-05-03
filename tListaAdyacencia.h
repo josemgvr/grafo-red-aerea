@@ -18,6 +18,7 @@ Descripción:
 #include "tPeso.h"
 #include "tVertice.h"
 #include "tConjunto.h"
+#include "tCola.h"
 
 struct NodoAdy {
     tVertice ciudad;
@@ -50,6 +51,7 @@ void getpeso_aristas (tListaAdy *l, tPeso* peso);
 void obtener_vertice_lista(tListaAdy l, int pos, tVertice *v);
 int obtener_numero_companias(tListaAdy l, tVertice v);
 
+void RecorridoEnAnchura_lista(tListaAdy l,tCola *cola);
 
 
 

@@ -3,6 +3,9 @@
 //
 
 #include "UsosGrafo.h"
+
+#include <math.h>
+
 #include "tGrafo.h"
 #include "tListaAdyacencia.h"
 #include "tConjunto.h"
@@ -382,4 +385,67 @@ void Consultar_ciudad_sumidero_y_fuente(tGrafo g) {
         aux = aux->sig;
     }
     printf("\n");
+}
+
+void Comprobar_Grafo_Conexo(tGrafo g) {
+    struct NodoLista *act = g;
+
+    tConjunto ciudades;
+    tConjunto NodosVisitados;
+    tGrafo g_aux;
+    tVertice v_act, v_prim;
+    tListaAdy l_act, l_prim;
+    int longitud = 0, EsConexo = 0;
+    int i,j;
+
+    CrearConjuntoVacio(&ciudades);
+    CrearConjuntoVacio(&NodosVisitados);
+    CrearListaVacia(&l_act);
+    CrearListaVacia(&l_prim);
+
+    while (act != NULL) {
+        poner(&ciudades,act->ciudad);
+        longitud++;
+        act = act->sig;
+    }
+
+    asignarGrafo(&g_aux, g);
+    act = g_aux;
+
+
+    for (i = 0; i < longitud; i++) {
+        act = g_aux;
+        CrearConjuntoVacio(&NodosVisitados);
+        CrearListaVacia(&l_act);
+        CrearListaVacia(&l_prim);
+
+        for (j = 0; j < i; j++) {
+            act = act->sig;
+        }
+
+        asignarVertice(&v_prim, g_aux->ciudad);
+        asignarVertice(&v_act, act->ciudad);
+
+        asignarLista(g_aux->ady, &l_prim);
+        asignarLista(act->ady, &l_act);
+
+        asignarVertice(&g_aux->ciudad, v_act);
+        asignarVertice(&act->ciudad, v_prim);
+
+        asignarLista(l_act, &g_aux->ady);
+        asignarLista(l_prim, &act->ady);
+
+        RecorridoEnAnchura(g_aux,&NodosVisitados);
+
+        if (EsIgualConjunto(NodosVisitados, ciudades)) {
+            EsConexo++;
+        }
+    }
+    if (EsConexo == longitud) {
+        printf("Es fuertemente conexo \n");
+    } else if (EsConexo > 0) {
+        printf("Es debilemente conexo \n");
+    } else {
+        printf("No es conexo \n");
+    }
 }

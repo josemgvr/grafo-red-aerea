@@ -3,7 +3,9 @@
 //
 #include <stdlib.h>
 #include "tGrafo.h"
-
+#include "tVertice.h"
+#include "tConjunto.h"
+#include "tCola.h"
 #include <stdio.h>
 
 
@@ -127,9 +129,36 @@ void asignarGrafo(tGrafo* g1, tGrafo g2) {
     }
 }
 
-void RecorridoEnAnchura(tGrafo *g) { //Aun falta implementarlo
+void RecorridoEnAnchura(tGrafo g, tConjunto *visitados) {
+    if (!EsGrafoVacio(g)) {
+        struct NodoLista *aux = g;
+        tVertice v;
+        tCola cola;
+        CrearColaVacia(&cola);
+
+        InsertarCola(&cola,aux->ciudad);
+        poner(visitados, aux->ciudad);
+        RecorridoEnAnchura_lista(aux->ady,&cola);
+
+        while (!EsColaVacia(cola)) {
+            PrimeroCola(cola, &v);
+
+            aux = g;
+            while (aux != NULL && !igualVertice(aux->ciudad, v)) {
+                aux = aux->sig;
+                }
+
+                if (!pertenece(*visitados, v)) {
+                    poner(visitados, aux->ciudad);
+                    RecorridoEnAnchura_lista(aux->ady,&cola);
+                } else {
+                    Eliminar_vertice_cola(&cola);
+                }
+
+            }
+
+        } else {
+            CrearConjuntoVacio(visitados);
+        }
 
 }
-
-
-

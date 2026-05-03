@@ -68,7 +68,7 @@ int main(void) {
                    consultar_destinos(g, v1);
                    break;
                case 2:
-                    printf("Esta funcion aun no esta implementada, intentelo mas tarde \n");
+                   Comprobar_Grafo_Conexo(g);
                    break;
                case 3:
                    printf("Ingrese la ciudad que desea comprobar a que ciudades puedes vistar haciendo una escala \n");
@@ -140,6 +140,7 @@ int main(void) {
            if (seleccion !=0) {
                printf("Introduzca cualquier valor para continuar \n");
                scanf(" %d", &seleccion);
+               seleccion = 1; //para evitar que se seleccione el 0 y salga del programa
            }
 
        } while (seleccion != 0);
