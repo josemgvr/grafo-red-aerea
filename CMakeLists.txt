@@ -1,19 +1,30 @@
+
 cmake_minimum_required(VERSION 3.5)
 project(Practica C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(Practica
-        main.c
-        tGrafo.c
-        tListaAdyacencia.c
-        tVertice.c
-        tPeso.c
-        UsosGrafo.c
-        UsosGrafo.h
-        tConjunto.c
-        tConjunto.h
-        tCola.c
-        tCola.h)
+# -------- LIBRERIA DE TADs --------
+add_library(tads
+        tads/tGrafo.c
+        tads/tListaAdyacencia.c
+        tads/tVertice.c
+        tads/tPeso.c
+        tads/UsosGrafo.c
+        tads/tConjunto.c
+        tads/tCola.c
+)
 
-configure_file(vuelos.txt vuelos.txt COPYONLY)
+target_include_directories(tads PUBLIC tads)
+
+add_executable(Practica main.c)
+
+target_link_libraries(Practica tads)
+
+
+
+configure_file(
+        ${CMAKE_SOURCE_DIR}/datos/vuelos.txt
+        ${CMAKE_BINARY_DIR}/vuelos.txt
+        COPYONLY
+)
