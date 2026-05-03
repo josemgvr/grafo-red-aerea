@@ -1,4 +1,4 @@
-# ✈️ Red Aérea Europea — Práctica de Grafos
+# ✈️ Red Aérea Europea — Práctica de Grafos 
 
 > **Asignatura:** Estructura de Datos · Grado en Ingeniería Informática · URJC  
 > **Lenguaje:** C  
