@@ -455,7 +455,7 @@ void Comprobar_Grafo_Conexo(tGrafo g) {
     if (EsConexo == longitud) {
         printf("Es fuertemente conexo \n");
     } else if (EsConexo > 0) {
-        printf("Es debilemente conexo \n");
+        printf("Es debilmente conexo \n");
     } else {
         printf("No es conexo \n");
     }
