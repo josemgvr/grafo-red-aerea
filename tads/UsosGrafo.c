@@ -322,12 +322,11 @@ void consultar_trayecto_mas_largo(tGrafo g) {
             tVertice v;
             asignarVertice(&v, aux->ciudad);
             EliminarVertice(&g_copia, v);
-            consultar_trayecto_mas_largo(g_copia);
+            consultar_trayecto_mas_corto(g_copia);
         }
 
         if (!EsPesoVacio(peso1)) {
-            printf("El trayecto mas largo es el de: \n");
-            buscarVertice_aristas(&g_copia);
+            printf("El trayecto mas corto es el de: \n");
             mostraPeso(peso1);
 
         }
@@ -337,7 +336,6 @@ void consultar_trayecto_mas_largo(tGrafo g) {
         printf("No hay trayectos disponbles \n");
     }
 }
-
 void Consular_Trayecto_mas_companyias(tGrafo g) {
 
     if (!EsGrafoVacio(g)) {

@@ -144,6 +144,7 @@ int main(void) {
                        case 0: consultar_trayecto_mas_corto(g);
                            break;
                        case 1: consultar_trayecto_mas_largo(g);
+                            printf("prueba");
                            break;
                        default: printf("Has ingresado un número incorrecto, intentelo de nuevo \n");
                    }
